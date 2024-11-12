@@ -1,7 +1,7 @@
-# Program to greet the user
+# Greeting program
+name = input("Please enter your name: ")
 
-# Ask the user for their name
-name = input("Hello, what is your name? ")
-
-# Print a greeting message
-print(f"Hello, {name}. Good to meet you!")
+if name.strip() == "":
+    print("Hello, Stranger!")
+else:
+    print(f"Hello, {name}!")

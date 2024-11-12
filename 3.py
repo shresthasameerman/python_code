@@ -1,18 +1,21 @@
-def main():
-    # Prompt for the number of students and group size
-    num_students = int(input("How many students? "))
-    group_size = int(input("Required group size? "))
+def is_valid_password(password):
+    # Check if the password length is between 8 and 12 characters
+    if len(password) < 8 or len(password) > 12:
+        return False
     
-    # Calculate the number of groups and leftover students
-    num_groups = num_students // group_size
-    leftover_students = num_students % group_size
-    
-    # Determine the correct grammar for the output
-    if leftover_students == 1:
-        print(f"There will be {num_groups} groups with {leftover_students} student left over.")
-    else:
-        print(f"There will be {num_groups} groups with {leftover_students} students left over.")
+    # Check if the password contains at least one letter and one digit
+    has_letter = any(char.isalpha() for char in password)
+    has_digit = any(char.isdigit() for char in password)
 
-# Run the program
+    return has_letter and has_digit
+
+def main():
+    password = input("Enter your password: ")
+    
+    if is_valid_password(password):
+        print("Your password is valid.")
+    else:
+        print("Your password must be between 8 and 12 characters long and contain at least one letter and one digit.")
+
 if __name__ == "__main__":
     main()
