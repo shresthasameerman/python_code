@@ -1,14 +1,12 @@
-def set_password():
-    # Prompt the user for a new password
-    password1 = input("Please enter a new password: ")
-    # Prompt the user to confirm the password
-    password2 = input("Please re-enter the password to confirm: ")
-    
-    # Check if the passwords match
-    if password1 == password2:
-        print("Password Set")
-    else:
-        print("Error: Passwords do not match. Please try again.")
+# Function to convert Celsius to Fahrenheit
+def celsius_to_fahrenheit(celsius):
+    return (celsius * 9/5) + 32
 
-# Run the password setting function
-set_password()
+# Prompt the user for temperature in Celsius
+celsius_input = float(input("Enter a temperature in Celsius: "))
+
+# Calculate the corresponding temperature in Fahrenheit
+fahrenheit_output = celsius_to_fahrenheit(celsius_input)
+
+# Display the result
+print(f"{celsius_input}C is equivalent to {fahrenheit_output}F.")

@@ -1,21 +1,24 @@
-def is_valid_password(password):
-    # Check if the password is alphanumeric
-    return password.isalnum()
-
-# Initialize a counter for bad passwords
-bad_password_count = 0
-
-# Allow user to enter passwords
-while True:
-    password = input("Enter a password (or type 'exit' to quit): ")
+def distribute_sweets():
+    # Input: number of sweets and number of pupils
+    try:
+        total_sweets = int(input("Enter the total number of sweets: "))
+        number_of_pupils = int(input("Enter the number of pupils: "))
+        
+        # Check if the number of pupils is greater than 0 to avoid division by zero
+        if number_of_pupils <= 0:
+            print("The number of pupils must be greater than zero.")
+            return
+        
+        # Calculate sweets per pupil and sweets left over
+        sweets_per_pupil = total_sweets // number_of_pupils
+        sweets_left_over = total_sweets % number_of_pupils
+        
+        # Output the results
+        print(f"Each pupil will receive: {sweets_per_pupil} sweets.")
+        print(f"Sweets left over: {sweets_left_over} sweets.")
     
-    if password.lower() == 'exit':
-        break  # Exit the loop if the user types 'exit'
-    
-    if not is_valid_password(password):
-        print(f"'{password}' is a bad password.")
-        bad_password_count += 1
-    else:
-        print(f"'{password}' is a valid password.")
+    except ValueError:
+        print("Please enter valid integers for sweets and pupils.")
 
-print(f"Total bad passwords: {bad_password_count}")
+# Run the function
+distribute_sweets()
